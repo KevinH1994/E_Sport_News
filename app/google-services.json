@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "529129921082",
+    "project_id": "esportnews-2fad6",
+    "storage_bucket": "esportnews-2fad6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529129921082:android:5d6f4b3c0a029997913303",
+        "android_client_info": {
+          "package_name": "de.syntaxinstitut.e_sport_news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529129921082-08cgk9dvtkbb8j5sbv90me3g01eag1f9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLNlwC3UqsU_SziggTuFuUNdtKFrMmOJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529129921082-08cgk9dvtkbb8j5sbv90me3g01eag1f9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
