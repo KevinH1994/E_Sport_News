@@ -24,10 +24,10 @@ class YoutubeViewModel: ViewModel() {
     val video = repository.videoList
 
     init {
-        loadVideoData()
+        loadData()
     }
 
-    fun loadVideoData(){
+    fun loadData(){
         viewModelScope.launch {
             _loading.value = ApiStatus.LOADING
             try {

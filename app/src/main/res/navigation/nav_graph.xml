@@ -30,4 +30,8 @@
             android:id="@+id/action_signUpFragment_to_HomeFragment"
             app:destination="@id/HomeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/YoutubeFragment"
+        android:name="de.syntaxinstitut.e_sport_news.ui.Youtube.YoutubeFragment"
+        android:label="YoutubeFragment" />
 </navigation>

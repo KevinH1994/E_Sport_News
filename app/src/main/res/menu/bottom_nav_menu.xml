@@ -7,7 +7,7 @@
         android:title="Home" />
 
     <item
-        android:id="@+id/navigation_headlines"
+        android:id="@+id/YoutubeFragment"
         android:icon="@drawable/ic_baseline_video_label_24"
         android:title="Shorts" />
 
