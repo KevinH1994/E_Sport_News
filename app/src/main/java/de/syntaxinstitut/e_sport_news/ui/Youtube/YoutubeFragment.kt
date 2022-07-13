@@ -36,7 +36,7 @@ class YoutubeFragment : Fragment() {
         helper.attachToRecyclerView(binding.rvYoutube)
 
         viewModel.video.observe(viewLifecycleOwner){
-            binding.rvYoutube.adapter = YoutubeAdapter(it)
+            //binding.rvYoutube.adapter = YoutubeAdapter(it)
 
         }
     }

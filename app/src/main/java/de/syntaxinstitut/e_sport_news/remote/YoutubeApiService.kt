@@ -3,6 +3,7 @@ package de.syntaxinstitut.e_sport_news.remote
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import de.syntaxinstitut.e_sport_news.data.models.youtube.Content
+import de.syntaxinstitut.e_sport_news.data.models.youtube.ResponseData
 import de.syntaxinstitut.e_sport_news.data.models.youtube.Youtube
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -16,9 +17,10 @@ import retrofit2.http.Headers
 const val BASE_URL ="https://youtube-search-and-download.p.rapidapi.com/"
 
 val client :  OkHttpClient= OkHttpClient.Builder().addInterceptor(){    chain ->
-    val request = Request.Builder()
+    val request = chain.request().newBuilder()
         .addHeader("X-RapidAPI-Key", "d4fd2ef3c4msh75966aa06d019bcp198c28jsncf949f7fbaa3")
         .addHeader("X-RapidAPI-Host", "youtube-search-and-download.p.rapidapi.com")
+        .addHeader("id","")
         .build()
     chain.proceed(request)
 
@@ -44,7 +46,7 @@ private val retrofit = Retrofit.Builder()
 
 interface YoutubeApiService{
     @GET("search?query=e-sport-news")
-    suspend fun getVideo(): Youtube
+    suspend fun getVideo(): ResponseData
 
 }
 object YoutubeApi{

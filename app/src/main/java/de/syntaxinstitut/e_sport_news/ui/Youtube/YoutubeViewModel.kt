@@ -28,10 +28,12 @@ class YoutubeViewModel: ViewModel() {
     }
 
     fun loadData(){
+        Log.d("AAA", video.value.toString())
         viewModelScope.launch {
             _loading.value = ApiStatus.LOADING
             try {
-                repository.getVideo()
+              val test =   repository.getVideo()
+                Log.d("AAA", test.toString())
                 _loading.value = ApiStatus.DONE
             }catch (e:Exception){
                 Log.e(TAG, "Error loading Data from Api: $e")

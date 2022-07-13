@@ -4,15 +4,16 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 
-@Entity
+
 data class Video(
-    @PrimaryKey
-    @Json(name ="")
+    val channelId: String,
     val channelName: String,
     val description: String,
     val lengthText: String,
-    @Json(name= "")
+    val publishedTimeText:String,
+    val thumbnails: List<Thumbnails>,
     val title: String,
-    @Json(name = "")
     val videoId: String,
+    val viewCountText: String
+
 )
