@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.e_sport_news.R
 import de.syntaxinstitut.e_sport_news.databinding.FragmentHomeBinding
@@ -47,6 +48,7 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.login_fragment, container, false)
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+       
         return binding.root
 
     }

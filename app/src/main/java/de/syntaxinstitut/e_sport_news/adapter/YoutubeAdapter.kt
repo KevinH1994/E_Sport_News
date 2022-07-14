@@ -1,23 +1,24 @@
 package de.syntaxinstitut.e_sport_news.adapter
 
-import android.service.autofill.Dataset
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import de.syntaxinstitut.e_sport_news.R
-import de.syntaxinstitut.e_sport_news.data.models.youtube.Content
-import de.syntaxinstitut.e_sport_news.data.models.youtube.Video
+import de.syntaxinstitut.e_sport_news.data.models.youtube.ContentsData
+import de.syntaxinstitut.e_sport_news.data.models.youtube.ResponseData
 
 
 class YoutubeAdapter(
-    private val dataset: List<Content>
-): RecyclerView.Adapter<YoutubeAdapter.ItemViewHolder>() {
+    private val dataset : List<ContentsData>
+) : RecyclerView.Adapter<YoutubeAdapter.ItemViewHolder>() {
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val vVideo: VideoView = itemView.findViewById(R.id.vv_youtube1)
+        val ivVideo: ImageView = itemView.findViewById(R.id.iv_youtube)
         val tvTitel: TextView = itemView.findViewById(R.id.tv_titel)
         val tvchannel :TextView = itemView.findViewById(R.id.tv_channelName)
 
@@ -34,17 +35,24 @@ class YoutubeAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         // holt das videoItem aus dem Dataset
         val video = dataset[position]
+        val urlThumbnail = video.video!!.thumbnails.first()
+        val thumbnailUri = urlThumbnail.url.toUri().buildUpon().scheme("https").build()
+        holder.ivVideo.load(thumbnailUri){
 
-        //val url = "https://www.youtube.com/watch?v=fhz_vLtEiTY&"
+        }
 
-        val videoUri = video.video.videoId.toUri().buildUpon().scheme("https").build()
 
-        holder.vVideo.setVideoURI(videoUri)
-        holder.vVideo.start()
+        val urlVideo = "https://www.youtube.com/watch?v="+video.video!!.videoId
+
+        val videoUri = urlVideo.toUri().buildUpon().scheme("https").build()
+
+
+
 
         holder.tvTitel.text = video.video.title
+        holder.tvchannel.text = video.video.author.title
 
-        holder.tvchannel.text = video.video.channelName
+
     }
     override fun getItemCount(): Int {
         return dataset.size

@@ -1,6 +1,7 @@
 package de.syntaxinstitut.e_sport_news.ui.Youtube
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.SnapHelper
-import de.syntaxinstitut.e_sport_news.R
 import de.syntaxinstitut.e_sport_news.adapter.YoutubeAdapter
+import de.syntaxinstitut.e_sport_news.data.models.youtube.ResponseData
 import de.syntaxinstitut.e_sport_news.databinding.FragmentYoutubeBinding
 import de.syntaxinstitut.e_sport_news.ui.main.YoutubeViewModel
 
@@ -36,7 +37,8 @@ class YoutubeFragment : Fragment() {
         helper.attachToRecyclerView(binding.rvYoutube)
 
         viewModel.video.observe(viewLifecycleOwner){
-            //binding.rvYoutube.adapter = YoutubeAdapter(it)
+            Log.d("AAA", "123")
+            binding.rvYoutube.adapter = YoutubeAdapter(it.contents)
 
         }
     }

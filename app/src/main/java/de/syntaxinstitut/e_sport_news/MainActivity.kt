@@ -1,6 +1,7 @@
 package de.syntaxinstitut.e_sport_news
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -47,8 +48,12 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(navView,navController)
 
         navView.setupWithNavController(navController)
-
-
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.LoginFragment -> navView.visibility = View.GONE
+                else -> navView.visibility = View.VISIBLE
+            }
+        }
 //        val navView : BottomNavigationView = binding.bottomNavigation
 //
 //        val navHostFragment = supportFragmentManager.findFragmentById(R.id.main_fragment )
