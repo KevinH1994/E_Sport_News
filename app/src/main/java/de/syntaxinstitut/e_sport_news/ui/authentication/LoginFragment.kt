@@ -48,7 +48,7 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.login_fragment, container, false)
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-       
+
         return binding.root
 
     }

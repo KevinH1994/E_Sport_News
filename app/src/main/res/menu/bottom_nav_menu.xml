@@ -12,7 +12,7 @@
         android:title="Shorts" />
 
     <item
-        android:id="@+id/navigation_bookmarks"
+        android:id="@+id/ChatHomeFragment"
         android:icon="@drawable/ic_baseline_chat_24"
         android:title="Chat" />
 

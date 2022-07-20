@@ -43,7 +43,6 @@ class MainActivity : AppCompatActivity() {
        val navView: BottomNavigationView = binding.bottomNavigation
 
         navController= this.findNavController(R.id.main_fragment)
-        NavigationUI.setupActionBarWithNavController(this,navController)
 
         NavigationUI.setupWithNavController(navView,navController)
 
@@ -54,18 +53,8 @@ class MainActivity : AppCompatActivity() {
                 else -> navView.visibility = View.VISIBLE
             }
         }
-//        val navView : BottomNavigationView = binding.bottomNavigation
-//
-//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.main_fragment )
-//                as NavHostFragment
-//
-//        navController = navHostFragment.navController
-//
-//
-//        navView.setupWithNavController(navController)
+
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
-    }
+
 }

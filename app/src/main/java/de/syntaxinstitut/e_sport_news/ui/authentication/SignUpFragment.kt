@@ -58,7 +58,6 @@ class SignUpFragment : Fragment() {
     val email = binding.signupMail.text.toString()
     val password = binding.signupPassword.text.toString()
 
-
     if (!email.isNullOrEmpty() && !password.isNullOrEmpty()){
       viewModel.signUp(email, password)
     }

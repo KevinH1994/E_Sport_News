@@ -19,7 +19,7 @@ class YoutubeRepsitory(private val api: YoutubeApi) {
 
     suspend fun getVideo() {
         try {
-          var responseData = ResponseData(mutableListOf<ContentsData>(),"")
+          val responseData = ResponseData(mutableListOf<ContentsData>(),"")
             for (item in api.retrofitService.getVideo().contents){
                 if (item.type == "video"){
                     responseData.contents.add(item)
