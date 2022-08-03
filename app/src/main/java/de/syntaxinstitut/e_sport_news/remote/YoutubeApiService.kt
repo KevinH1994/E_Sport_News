@@ -13,9 +13,10 @@ import retrofit2.http.Query
 
 const val BASE_URL ="https://youtube138.p.rapidapi.com/"
 
-val client :  OkHttpClient= OkHttpClient.Builder().addInterceptor(){    chain ->
+val clientYT :  OkHttpClient= OkHttpClient.Builder().addInterceptor(){    chain ->
     val request = chain.request().newBuilder()
         .addHeader("X-RapidAPI-Host", "youtube138.p.rapidapi.com")
+
         .addHeader("X-RapidAPI-Key", "d4fd2ef3c4msh75966aa06d019bcp198c28jsncf949f7fbaa3")
         .build()
     chain.proceed(request)
@@ -33,7 +34,7 @@ private val moshi = Moshi.Builder()
 //Retrofit übernimmt die Kommunikation und übersetzt die Antwort
 
 private val retrofit = Retrofit.Builder()
-    .client(client)
+    .client(clientYT)
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(BASE_URL)
     .build()

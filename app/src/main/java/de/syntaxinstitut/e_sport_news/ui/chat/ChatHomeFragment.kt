@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import de.syntaxinstitut.e_sport_news.adapter.ContactAdapter
 import de.syntaxinstitut.e_sport_news.data.models.Repository.ChatRepository
+import de.syntaxinstitut.e_sport_news.databinding.FragmentChatBinding
+import de.syntaxinstitut.e_sport_news.databinding.FragmentChatHomeBinding
 
 import de.syntaxinstitut.e_sport_news.databinding.FragmentHomeBinding
 
@@ -16,7 +18,7 @@ class ChatHomeFragment: Fragment() {
 
     private val viewModel : SharedChatViewModel by viewModels()
     // Das binding für das QuizFragment wird deklariert
-    private lateinit var binding: FragmentHomeBinding
+    private lateinit var binding:FragmentChatHomeBinding
 
     /**
      * Lifecycle Funktion onCreateView
@@ -27,7 +29,7 @@ class ChatHomeFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentChatHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -40,7 +42,7 @@ class ChatHomeFragment: Fragment() {
 
         // Weise das viewModel und den lifecycleOwner zu
 
-        binding. = viewModel
+
 
         binding.lifecycleOwner = viewLifecycleOwner
 

@@ -85,18 +85,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            app:boxStrokeColor="@color/gmts_google_grey800"
-            app:hintTextColor="@color/gmts_google_grey800"
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnSend"
             app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInput"
-                android:text="@={viewmodelChat.inputText}"
+                android:text="@={viewModel.inputText}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/message"
+                android:hint="Hallo"
                 android:maxLines="3" />
         </com.google.android.material.textfield.TextInputLayout>
 

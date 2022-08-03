@@ -31,7 +31,7 @@ class ChatFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding.viewmodelChat = viewModel
+        binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
         arguments?.let {
