@@ -34,4 +34,8 @@
         android:id="@+id/YoutubeFragment"
         android:name="de.syntaxinstitut.e_sport_news.ui.Youtube.YoutubeFragment"
         android:label="YoutubeFragment" />
+    <fragment
+        android:id="@+id/chatHomeFragment"
+        android:name="de.syntaxinstitut.e_sport_news.ui.chat.ChatHomeFragment"
+        android:label="ChatHomeFragment" />
 </navigation>

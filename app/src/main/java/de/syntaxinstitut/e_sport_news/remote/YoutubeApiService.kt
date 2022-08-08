@@ -16,7 +16,6 @@ const val BASE_URL ="https://youtube138.p.rapidapi.com/"
 val clientYT :  OkHttpClient= OkHttpClient.Builder().addInterceptor(){    chain ->
     val request = chain.request().newBuilder()
         .addHeader("X-RapidAPI-Host", "youtube138.p.rapidapi.com")
-
         .addHeader("X-RapidAPI-Key", "d4fd2ef3c4msh75966aa06d019bcp198c28jsncf949f7fbaa3")
         .build()
     chain.proceed(request)
