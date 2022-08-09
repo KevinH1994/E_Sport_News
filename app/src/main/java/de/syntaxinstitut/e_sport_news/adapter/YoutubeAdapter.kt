@@ -9,6 +9,9 @@ import android.widget.VideoView
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import de.syntaxinstitut.e_sport_news.R
 import de.syntaxinstitut.e_sport_news.data.models.youtube.ContentsData
 import de.syntaxinstitut.e_sport_news.data.models.youtube.ResponseData
@@ -18,9 +21,11 @@ class YoutubeAdapter(
     private val dataset : List<ContentsData>
 ) : RecyclerView.Adapter<YoutubeAdapter.ItemViewHolder>() {
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val ivVideo: ImageView = itemView.findViewById(R.id.iv_youtube)
+        val ivVideo : YouTubePlayerView = itemView.findViewById(R.id.yt_vv)
         val tvTitel: TextView = itemView.findViewById(R.id.tv_titel)
         val tvchannel :TextView = itemView.findViewById(R.id.tv_channelName)
+
+
 
 
     }
@@ -36,15 +41,20 @@ class YoutubeAdapter(
         // holt das videoItem aus dem Dataset
         val video = dataset[position]
         val urlThumbnail = video.video!!.thumbnails.first()
-        val thumbnailUri = urlThumbnail.url.toUri().buildUpon().scheme("https").build()
-        holder.ivVideo.load(thumbnailUri){
 
-        }
+
+
 
 
         val urlVideo = "https://www.youtube.com/watch?v="+video.video!!.videoId
 
         val videoUri = urlVideo.toUri().buildUpon().scheme("https").build()
+
+        holder.ivVideo.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(youTubePlayer: YouTubePlayer) {
+                youTubePlayer.cueVideo(video.video!!.videoId, 0f)
+            }
+        })
 
 
 

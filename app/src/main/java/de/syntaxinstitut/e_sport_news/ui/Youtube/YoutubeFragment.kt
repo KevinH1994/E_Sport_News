@@ -10,9 +10,8 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import de.syntaxinstitut.e_sport_news.adapter.YoutubeAdapter
-import de.syntaxinstitut.e_sport_news.data.models.youtube.ResponseData
 import de.syntaxinstitut.e_sport_news.databinding.FragmentYoutubeBinding
-import de.syntaxinstitut.e_sport_news.ui.main.YoutubeViewModel
+import de.syntaxinstitut.e_sport_news.ui.news.YoutubeViewModel
 
 class YoutubeFragment : Fragment() {
     private val viewModel: YoutubeViewModel by viewModels()

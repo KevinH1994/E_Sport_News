@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="de.syntaxinstitut.e_sport_news.ui.main.HomeScreenFragment"
+        android:name="de.syntaxinstitut.e_sport_news.ui.news.HomeScreenFragment"
         android:label="HomeFragment"
         tools:layout="@layout/list_item_home" />
     <fragment

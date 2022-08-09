@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.e_sport_news.R
 import de.syntaxinstitut.e_sport_news.adapter.SearchAdapter
 import de.syntaxinstitut.e_sport_news.databinding.FragmentSearchBinding
-import de.syntaxinstitut.e_sport_news.ui.main.HomeScreenFragment
 
 class SearchFragment: Fragment(R.layout.fragment_search) {
     private lateinit var binding: FragmentSearchBinding

@@ -1,4 +1,4 @@
-package de.syntaxinstitut.e_sport_news.ui.main
+package de.syntaxinstitut.e_sport_news.ui.news
 
 import android.util.Log
 import androidx.lifecycle.LiveData

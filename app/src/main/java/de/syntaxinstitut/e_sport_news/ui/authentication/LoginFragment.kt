@@ -8,13 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.e_sport_news.R
-import de.syntaxinstitut.e_sport_news.databinding.FragmentHomeBinding
 import de.syntaxinstitut.e_sport_news.databinding.LoginFragmentBinding
-import de.syntaxinstitut.e_sport_news.ui.main.HomeScreenFragment
 
 
 /**

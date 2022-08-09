@@ -1,13 +1,16 @@
-package de.syntaxinstitut.e_sport_news.ui.main
+package de.syntaxinstitut.e_sport_news.ui.news
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import de.syntaxinstitut.e_sport_news.R
+import de.syntaxinstitut.e_sport_news.adapter.NewsAdapter
 import de.syntaxinstitut.e_sport_news.databinding.FragmentHomeBinding
 
 
@@ -40,5 +43,16 @@ class HomeScreenFragment : Fragment(R.layout.list_item_home) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.loadNews()
+        viewModel.news.observe(viewLifecycleOwner, Observer {
+            val adapter = NewsAdapter(it.news, requireContext())
+            binding.rvNews.adapter = adapter
+            println(it)
+        })
+        binding.rvNews.setHasFixedSize(true)
     }
 }
