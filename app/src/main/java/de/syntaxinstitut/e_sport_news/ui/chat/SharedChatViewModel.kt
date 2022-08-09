@@ -51,7 +51,6 @@ class SharedChatViewModel : ViewModel() {    // Erstelle eine Instanz des Reposi
      * @param contactIndex die Stelle des Kontakts in der contacts Liste
      */
     fun openChat(contactIndex: Int) {
-        // TODO
         _currentContact= contacts[contactIndex]
         _chatOpen = true
         inputText.value = ""
@@ -62,7 +61,6 @@ class SharedChatViewModel : ViewModel() {    // Erstelle eine Instanz des Reposi
      * Diese Funktion schließt den Chat und setzt alle nötigen Variablen dementsprechend
      */
     fun closeChat() {
-        // TODO
         _chatOpen= false
         _draftMessageExist = false
 
@@ -73,7 +71,6 @@ class SharedChatViewModel : ViewModel() {    // Erstelle eine Instanz des Reposi
      * erster Stelle< in die Liste ein. Sie setzt zudem alle benötigten Variablen dementsprechend
      */
     fun createNewDraftMessage() {
-        // TODO
         val newDraft = Message("", 0.3f)
         _currentContact.chatHistory.add(0, newDraft)
         _draftMessageExist = true
@@ -84,7 +81,6 @@ class SharedChatViewModel : ViewModel() {    // Erstelle eine Instanz des Reposi
      * @param text Der Text der in der neusten Nachricht stehen soll
      */
     fun writeInDraftMessage(text: String) {
-        // TODO
         _currentContact.chatHistory[0].message = text
     }
 
@@ -93,7 +89,6 @@ class SharedChatViewModel : ViewModel() {    // Erstelle eine Instanz des Reposi
      * auf undurchsichtig gestellt wird. Sie setzt zudem alle benötigten Variablen dementsprechend
      */
     fun sendDraftMessage() {
-        // TODO
         _currentContact.chatHistory[0].alpha = 1f
         _draftMessageExist = false
     }
@@ -103,7 +98,6 @@ class SharedChatViewModel : ViewModel() {    // Erstelle eine Instanz des Reposi
      * aus der Liste entfernt. Sie setzt zudem alle benötigten Variablen dementsprechend
      */
     fun removeDraftMessage() {
-        // TODO
         _currentContact.chatHistory.removeAt(0)
         _draftMessageExist = false
     }

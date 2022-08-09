@@ -17,7 +17,7 @@ class LogInViewModel(application: Application):  AndroidViewModel(application) {
 
     private val firebaseAuth = FirebaseAuth.getInstance()
 
-    //currentuse ist null wenn nimand eingeloggt ist
+    //currentuser ist null wenn nimand eingeloggt ist
     private val _currentUser = MutableLiveData<FirebaseUser?>(firebaseAuth.currentUser)
     val currentUser: LiveData<FirebaseUser?>
     get() = _currentUser

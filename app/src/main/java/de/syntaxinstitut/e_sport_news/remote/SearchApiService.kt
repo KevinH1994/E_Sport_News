@@ -12,7 +12,7 @@ import retrofit2.http.POST
 
 
 const val clientId = "deh7rpabvtjnkd8v2nl25bp2cktzvi"
-    const val clientToken ="tjo0bak61n6myvqhy0zeo6bmfh7yji"
+    const val clientToken = "tjo0bak61n6myvqhy0zeo6bmfh7yji"
 
     const val BASE_URL2 = "https://api.igdb.com/v4/"
 

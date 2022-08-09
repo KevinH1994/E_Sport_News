@@ -38,4 +38,8 @@
         android:id="@+id/chatHomeFragment"
         android:name="de.syntaxinstitut.e_sport_news.ui.chat.ChatHomeFragment"
         android:label="ChatHomeFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="de.syntaxinstitut.e_sport_news.ui.search.SearchFragment"
+        android:label="SearchFragment" />
 </navigation>

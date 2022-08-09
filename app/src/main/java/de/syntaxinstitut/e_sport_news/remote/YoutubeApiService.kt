@@ -13,6 +13,8 @@ import retrofit2.http.Query
 
 const val BASE_URL ="https://youtube138.p.rapidapi.com/"
 
+
+ // Hier wird OkHttp in eine Variable Conventiert um es in Retrofit übergeben zu werden.
 val clientYT :  OkHttpClient= OkHttpClient.Builder().addInterceptor(){    chain ->
     val request = chain.request().newBuilder()
         .addHeader("X-RapidAPI-Host", "youtube138.p.rapidapi.com")
