@@ -1,5 +1,6 @@
 package de.syntaxinstitut.e_sport_news.adapter
 
+import android.icu.text.Transliterator
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import de.syntaxinstitut.e_sport_news.R
 
 import de.syntaxinstitut.e_sport_news.data.models.Chat.Contact
 import de.syntaxinstitut.e_sport_news.ui.chat.ChatHomeFragment
+import de.syntaxinstitut.e_sport_news.ui.chat.ChatHomeFragmentDirections
 
 class ContactAdapter(
     private val dataset: List<Contact>
@@ -48,7 +50,7 @@ class ContactAdapter(
 
         holder.clContact.setOnClickListener {
             holder.itemView.findNavController()
-                //.navigate()
+                .navigate(ChatHomeFragmentDirections.actionChatHomeFragmentToChatFragment2(contactIndex = position))
         }
     }
 

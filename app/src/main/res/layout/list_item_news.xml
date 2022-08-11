@@ -7,7 +7,8 @@
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="4dp"
     app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/black">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_news"
@@ -32,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:text="Hallo"
-            android:textColor="?attr/colorPrimary"
+            android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/tv_content"
@@ -46,6 +47,7 @@
             android:layout_marginHorizontal="8dp"
             android:layout_height="200dp"
             android:text="Deutschland"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivPicture"

@@ -7,7 +7,8 @@
 
     </data>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background2"
@@ -15,58 +16,77 @@
 
 
         <TextView
+            android:id="@+id/signin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/signin"
+            android:layout_margin="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
             android:text="Sign in"
             android:textColor="@color/white"
             android:textSize="35dp"
             android:textStyle="bold"
-            android:layout_margin="50dp"
-            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_below="@id/signin"
+            android:layout_marginTop="50dp"
             android:hint="Username"
             android:padding="20dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signin" />
 
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_below="@id/username"
+            android:layout_marginTop="10dp"
             android:hint="Password"
             android:padding="20dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:textColorHint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/loginbtn"
             android:layout_width="148dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/password"
-            android:layout_marginTop="7dp"
-            android:backgroundTint="@color/design_default_color_secondary_variant"
-            android:text="LOGIN" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/purple_500"
+            android:text="LOGIN"
+            android:textColorHighlight="@color/purple_500"
+            android:textColorLink="@color/purple_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/password" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/signuobtn"
             android:layout_width="122dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/password"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="-330dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="-400dp"
             android:layout_toStartOf="@+id/loginbtn"
-            android:backgroundTint="@color/design_default_color_secondary_variant"
-            android:text="SIGNUP" />
+            android:backgroundTint="@color/white"
+            android:text="SIGNUP"
+            android:textColor="@color/purple_500"
+            app:layout_constraintEnd_toStartOf="@+id/loginbtn"
+            app:layout_constraintStart_toEndOf="@+id/loginbtn"
+            app:layout_constraintTop_toBottomOf="@id/password" />
 
         <TextView
             android:id="@+id/forgotpass"
@@ -79,13 +99,18 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:text="Passwort vergessen ?"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginbtn" />
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:gravity="center">
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
                 android:id="@+id/iv_twitch"
@@ -109,5 +134,5 @@
                 app:srcCompat="@drawable/google" />
         </LinearLayout>
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

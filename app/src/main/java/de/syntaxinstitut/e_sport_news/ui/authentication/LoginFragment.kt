@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.e_sport_news.R
@@ -26,7 +27,7 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
     private lateinit var userMail : String
 
     /** Das ViewModel zu diesem Fragment */
-    private val viewModel: LogInViewModel by viewModels()
+    private val viewModel: LogInViewModel by activityViewModels()
 
     /* -------------------- Lifecycle -------------------- */
 

@@ -37,9 +37,20 @@
     <fragment
         android:id="@+id/chatHomeFragment"
         android:name="de.syntaxinstitut.e_sport_news.ui.chat.ChatHomeFragment"
-        android:label="ChatHomeFragment" />
+        android:label="ChatHomeFragment" >
+        <action
+            android:id="@+id/action_chatHomeFragment_to_chatFragment2"
+            app:destination="@id/chatFragment2" />
+    </fragment>
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="de.syntaxinstitut.e_sport_news.ui.search.SearchFragment"
-        android:label="SearchFragment" />
+        android:id="@+id/chatFragment2"
+        android:name="de.syntaxinstitut.e_sport_news.ui.chat.ChatFragment"
+        android:label="ChatFragment" >
+        <action
+            android:id="@+id/action_chatFragment2_to_chatHomeFragment"
+            app:destination="@id/chatHomeFragment" />
+        <argument
+            android:name="contactIndex"
+            app:argType="integer" />
+    </fragment>
 </navigation>
