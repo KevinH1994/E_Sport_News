@@ -29,7 +29,7 @@ class SignUpFragment : Fragment() {
     inflater: LayoutInflater,
     container: ViewGroup?,
     savedInstanceState: Bundle?
-  ): View? {
+  ): View {
     binding = DataBindingUtil.inflate(inflater, R.layout.signup_fragment,container, false)
     (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
 
