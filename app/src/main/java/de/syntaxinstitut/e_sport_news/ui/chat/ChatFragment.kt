@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.e_sport_news.adapter.MessageAdapter
@@ -14,7 +15,7 @@ import de.syntaxinstitut.e_sport_news.databinding.FragmentChatBinding
 class ChatFragment: Fragment() {
     private var contactIndex: Int = 0
 
-    private val viewModel: SharedChatViewModel by viewModels()
+    private val viewModel: SharedChatViewModel by activityViewModels()
 
     private lateinit var binding: FragmentChatBinding
 
@@ -35,6 +36,7 @@ class ChatFragment: Fragment() {
 
 
         binding.viewModel = viewModel
+
         binding.lifecycleOwner = viewLifecycleOwner
 
         arguments?.let {
@@ -42,6 +44,7 @@ class ChatFragment: Fragment() {
         }
         viewModel.openChat(contactIndex)
 
+        binding.ivContactPicture.setImageResource(viewModel.currentContact.imageRes)
 
         val chatHistory = viewModel.currentContact.chatHistory
         val recyclerView = binding.rvMessages

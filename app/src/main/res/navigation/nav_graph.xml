@@ -52,5 +52,11 @@
         <argument
             android:name="contactIndex"
             app:argType="integer" />
+        <argument android:name="contactImage"
+            app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="de.syntaxinstitut.e_sport_news.ui.search.SearchFragment"
+        android:label="SearchFragment" />
 </navigation>

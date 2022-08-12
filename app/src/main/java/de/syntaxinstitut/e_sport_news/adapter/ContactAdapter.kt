@@ -10,7 +10,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import de.syntaxinstitut.e_sport_news.R
-
 import de.syntaxinstitut.e_sport_news.data.models.Chat.Contact
 import de.syntaxinstitut.e_sport_news.ui.chat.ChatHomeFragment
 import de.syntaxinstitut.e_sport_news.ui.chat.ChatHomeFragmentDirections
@@ -50,7 +49,7 @@ class ContactAdapter(
 
         holder.clContact.setOnClickListener {
             holder.itemView.findNavController()
-                .navigate(ChatHomeFragmentDirections.actionChatHomeFragmentToChatFragment2(contactIndex = position))
+                .navigate(ChatHomeFragmentDirections.actionChatHomeFragmentToChatFragment2(contactIndex = position , contactImage = item.imageRes ))
         }
     }
 

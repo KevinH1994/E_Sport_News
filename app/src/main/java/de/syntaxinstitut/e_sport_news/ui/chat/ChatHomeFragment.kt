@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import de.syntaxinstitut.e_sport_news.adapter.ContactAdapter
 import de.syntaxinstitut.e_sport_news.data.models.Repository.ChatRepository
@@ -16,7 +17,7 @@ import de.syntaxinstitut.e_sport_news.databinding.FragmentHomeBinding
 
 class ChatHomeFragment: Fragment() {
 
-    private val viewModel : SharedChatViewModel by viewModels()
+    private val viewModel : SharedChatViewModel by activityViewModels()
     // Das binding für das QuizFragment wird deklariert
     private lateinit var binding:FragmentChatHomeBinding
 
@@ -42,9 +43,8 @@ class ChatHomeFragment: Fragment() {
 
         // Weise das viewModel und den lifecycleOwner zu
 
-
-
         binding.lifecycleOwner = viewLifecycleOwner
+
 
         // Weise der RecylerView einen ContactAdapter zu,
         // übergib dem Adapter die Contact Liste aus dem ViewModel
