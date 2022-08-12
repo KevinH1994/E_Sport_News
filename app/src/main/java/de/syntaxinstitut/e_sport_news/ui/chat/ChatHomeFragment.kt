@@ -5,20 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import de.syntaxinstitut.e_sport_news.adapter.ContactAdapter
-import de.syntaxinstitut.e_sport_news.data.models.Repository.ChatRepository
-import de.syntaxinstitut.e_sport_news.databinding.FragmentChatBinding
 import de.syntaxinstitut.e_sport_news.databinding.FragmentChatHomeBinding
 
-import de.syntaxinstitut.e_sport_news.databinding.FragmentHomeBinding
+class ChatHomeFragment : Fragment() {
 
-
-class ChatHomeFragment: Fragment() {
-
-    private val viewModel : SharedChatViewModel by viewModels()
+    private val viewModel: SharedChatViewModel by activityViewModels()
     // Das binding für das QuizFragment wird deklariert
-    private lateinit var binding:FragmentChatHomeBinding
+    private lateinit var binding: FragmentChatHomeBinding
 
     /**
      * Lifecycle Funktion onCreateView
@@ -42,18 +38,21 @@ class ChatHomeFragment: Fragment() {
 
         // Weise das viewModel und den lifecycleOwner zu
 
-
-
         binding.lifecycleOwner = viewLifecycleOwner
+        val recyclerView = binding.rvContacts
 
         // Weise der RecylerView einen ContactAdapter zu,
         // übergib dem Adapter die Contact Liste aus dem ViewModel
 
-        val vacations = ChatRepository().contact
-        val recyclerView = binding.rvContacts
-        recyclerView.adapter = ContactAdapter(vacations)
-
-
+        viewModel.contacts.observe(
+            viewLifecycleOwner,
+            Observer {
+                if (it.isEmpty()) {
+                    viewModel.initalInsertContacts()
+                }
+                recyclerView.adapter = ContactAdapter(it)
+            }
+        )
 
         // Falls bereits ein Nachricht Entwurf existiert,
         // soll dieser mithilfe der Funktion aus dem ViewModel entfernt werden
@@ -67,5 +66,4 @@ class ChatHomeFragment: Fragment() {
             viewModel.closeChat()
         }
     }
-
 }

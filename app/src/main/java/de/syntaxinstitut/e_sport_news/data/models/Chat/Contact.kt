@@ -1,9 +1,12 @@
 package de.syntaxinstitut.e_sport_news.data.models.Chat
 
-import android.service.autofill.FillEventHistory
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity
 data class Contact(
-    val name : String,
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val name: String,
     val imageRes: Int,
-    val chatHistory: MutableList<Message>
 )

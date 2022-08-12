@@ -15,18 +15,16 @@ import de.syntaxinstitut.e_sport_news.data.models.Chat.Message
 class MessageAdapter(
     private val dataset: List<Message>,
     private val context: Context
-) : RecyclerView.Adapter<MessageAdapter.ItemViewHolder>(){
+) : RecyclerView.Adapter<MessageAdapter.ItemViewHolder>() {
 
-
-    inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvText: TextView = itemView.findViewById(R.id.tvMessageText)
         val cvMessage: CardView = itemView.findViewById(R.id.cvMessage)
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val itemLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item_message,parent,false)
+            .inflate(R.layout.list_item_message, parent, false)
 
         return ItemViewHolder(itemLayout)
     }
@@ -36,12 +34,11 @@ class MessageAdapter(
         holder.tvText.text = message.message
         holder.cvMessage.alpha = message.alpha
 
-
         holder.cvMessage.setOnClickListener {
             val shareIntent = Intent(Intent.ACTION_SEND)
-            shareIntent.type= "text/plain"
-            shareIntent.putExtra(Intent.EXTRA_TEXT,message.message)
-            startActivity(context, Intent.createChooser(shareIntent,null),null)
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, message.message)
+            startActivity(context, Intent.createChooser(shareIntent, null), null)
 
             true
         }

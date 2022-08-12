@@ -16,7 +16,7 @@ import de.syntaxinstitut.e_sport_news.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     /** Bindet das XML-View mit der Klasse um auf die Elemente zugreifen zu können */
-    //private val adapter = BottemAdapter(supportFragmentManager,0)
+    // private val adapter = BottemAdapter(supportFragmentManager,0)
     private lateinit var binding: ActivityMainBinding
 
     private lateinit var navController: NavController
@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     /* -------------------- Klassen Variablen -------------------- */
 
     /** Bindet das XML-View mit der Klasse um auf die Elemente zugreifen zu können */
-
 
     /* -------------------- Lifecycle -------------------- */
 
@@ -40,21 +39,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-       val navView: BottomNavigationView = binding.bottomNavigation
+        val navView: BottomNavigationView = binding.bottomNavigation
 
-        navController= this.findNavController(R.id.main_fragment)
+        navController = this.findNavController(R.id.main_fragment)
 
-        NavigationUI.setupWithNavController(navView,navController)
+        NavigationUI.setupWithNavController(navView, navController)
 
         navView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.LoginFragment -> navView.visibility = View.GONE
+                R.id.LoginFragment, R.id.signUpFragment, R.id.chatFragment2 -> navView.visibility = View.GONE
                 else -> navView.visibility = View.VISIBLE
             }
         }
-
     }
-
-
 }
